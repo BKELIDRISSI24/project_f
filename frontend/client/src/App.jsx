@@ -1,15 +1,25 @@
-
-import './App.css'
-import Marcup from './pages/Marcup'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Marcup from './pages/Marcup';
+import './App.css';
 
 function App() {
- 
-
   return (
-    <>
-     <Marcup/>
-    </>
-  )
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/marcup" element={<Marcup />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
 }
 
-export default App
+export default App;
